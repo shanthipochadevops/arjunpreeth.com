@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arjun Preeth</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => AOS.init());
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🎉 Welcome to ArjunPreeth.com 🎉</h1>
+    <p>Your daily dose of code, creativity, and chaos.</p>
+    <a href="#about" class="btn">Let’s Explore 👀</a>
+  </header>
+
+  <section id="about" data-aos="fade-up">
+    <h2>😎 Who's Arjun?</h2>
+    <p>I’m a dreamer, coder, meme-lover, and pizza enthusiast. I build fun things on the internet—and occasionally break them.</p>
+  </section>
+
+  <section id="projects" data-aos="fade-left">
+    <h2>🛠️ My Creative Playground</h2>
+    <div class="project-grid">
+      <div class="card">🎮 Game Prototype</div>
+      <div class="card">📱 Cool Mobile App</div>
+      <div class="card">🎨 AI Art Generator</div>
+    </div>
+  </section>
+
+  <section id="gallery" data-aos="zoom-in">
+    <h2>📸 Random Vibes</h2>
+    <p>Here’s a chaotic mix of my life, passions, and bizarre interests.</p>
+    <div class="gallery-grid">
+      <img src="https://placekitten.com/200/200" alt="kitten" />
+      <img src="https://placebear.com/200/200" alt="bear" />
+      <img src="https://picsum.photos/200" alt="random" />
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-right">
+    <h2>📬 Hit Me Up!</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message..." required></textarea>
+      <button type="submit">Send 🚀</button>
+    </form>
+  </section>
+
+  <button id="muteToggle">🔊</button>
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <footer>
+    <p>Made with ❤️ by Arjun Preeth | © 2025</p>
+  </footer>
+
+  <script>
+    const clickSound = document.getElementById('clickSound');
+    let muted = false;
+
+    document.querySelectorAll('button, .btn').forEach(el => {
+      el.addEventListener('click', () => {
+        if (!muted) clickSound.play();
+      });
+    });
+
+    document.getElementById('muteToggle').addEventListener('click', () => {
+      muted = !muted;
+      document.getElementById('muteToggle').textContent = muted ? '🔇' : '🔊';
+    });
+  </script>
+</body>
+</html>
